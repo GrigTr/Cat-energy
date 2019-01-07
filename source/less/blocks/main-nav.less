@@ -1,0 +1,38 @@
+.main-nav {
+  height: 0;
+  opacity: 0;
+  transition: opacity 1s, height 0.5s;
+
+  &--open {
+    height: 196px;
+    opacity: 1;
+    transition: height .5s,opacity 1s;
+
+    .main-nav__item {
+      display: block;
+    }
+  }
+
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__item {
+  display: none;
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 21px 20px;
+}
+
+.main-nav__link {
+  font-family: Oswald, sans-serif;
+  color: #111;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+}

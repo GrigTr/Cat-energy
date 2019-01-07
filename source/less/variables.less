@@ -1,5 +1,5 @@
 @mobile-width: 320px;
-@mobile-width-only: 767px;
+@mobile-max-width: 767px;
 @tablet-width: 768px;
 @tablet-max-width: 1299px;
 @desktop-width: 1300px;
@@ -11,5 +11,6 @@
 @desktop: ~"(min-width: @{desktop-width})";
 
 @tablet-only: ~"(max-width: @{tablet-max-width})";
+@mobile-width-only: ~"(max-width: @{mobile-max-width})";
 
 @retina: ~"(min-resolution: @{retina-dpi})";
