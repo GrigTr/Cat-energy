@@ -1,38 +1,145 @@
 .main-nav {
-  height: 0;
-  opacity: 0;
-  transition: opacity 1s, height 0.5s;
+  height: 196px;
+  opacity: 1;
+  transition: opacity 1s,height 0.5s;
 
-  &--open {
-    height: 196px;
-    opacity: 1;
-    transition: height .5s,opacity 1s;
+  .main-nav__item {
+    display: block;
+  }
 
-    .main-nav__item {
-      display: block;
+  &--closed {
+    opacity: 0;
+    height: 0;
+    transition: opacity 1s,height 0.5s;
+
+    .main-nav__list {
+      display: none;
     }
   }
 
+
+  @media @tablet {
+    height: auto;
+    opacity: 1;
+    width: 67%;
+
+    .main-nav__list {
+      display: flex;
+    }
+  }
 }
 
 .main-nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media @tablet {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 18px 0 0 0;
+  }
 }
 
 .main-nav__item {
   display: none;
+  position: relative;
   text-align: center;
   border-bottom: 1px solid #e6e6e6;
   padding: 21px 20px;
+
+  &:first-child {
+    border-top: 1px solid #e6e6e6;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @media @tablet {
+    display: block;
+    padding: 0;
+    border-bottom: none;
+    margin-left: 7%;
+  }
 }
 
 .main-nav__link {
+  position: relative;
   font-family: Oswald, sans-serif;
   color: #111;
   font-size: 22px;
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
+
+  @media @tablet {
+    color: #222222;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.86px;
+
+    &--active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #68b738;
+      bottom: -7px;
+      right: 0;
+    }
+  }
+}
+
+.main-nav__toggle {
+  display: block;
+  position: absolute;
+  top: 21px;
+  right: 23px;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background-color: transparent;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #0f0f0f;
+    top: 50%;
+    right: -1px;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &--off {
+    &:after {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 24px;
+      height: 2px;
+      background-color: #222;
+      box-shadow: 0 9px 0 0 #222, 0 18px 0 0 #222;
+    }
+  }
+
+  @media @tablet {
+    display: none;
+  }
 }

@@ -9,6 +9,22 @@
   @media @retina {
     background-image: url("../img/index-background-mobile@2x.jpg");
   }
+
+  @media @tablet {
+    text-align: left;
+    padding-left: 15%;
+    padding-bottom: 65px;
+    min-height: 800px;
+
+    background-image: url("../img/index-can-tablet@1x.jpg");
+    background-repeat: no-repeat;
+    background-size: 709px 609px;
+    background-position: 50% 254px;
+
+    @media @retina {
+      background-image: url("../img/index-can-tablet@2x.jpg");
+    }
+  }
 }
 
 .head-block__title {
@@ -21,6 +37,16 @@
   padding-top: 27px;
   padding-right: 10px;
   padding-left: 10px;
+
+  @media @tablet {
+    padding: 0;
+    color: #111111;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 60px;
+    padding-top: 52px;
+    max-width: 65%;
+  }
 }
 
 .head-block__text {
@@ -33,15 +59,39 @@
   text-transform: uppercase;
   margin-top: 25px;
   padding: 0 10px;
+
+  @media @tablet {
+    margin: 0;
+    padding: 0;
+    color: #111111;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 42px;
+    margin-left: 2px;
+  }
 }
 
 .head-block__image {
   display: block;
   margin: 0 auto;
   margin-top: 30px;
+  
+  @media @tablet {
+    display: none;
+  }
 }
 
 .head-block__button {
   margin: 0 auto;
   padding: 12px 72px;
+
+  @media @tablet {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 49px;
+    margin-left: 3px;
+    padding: 17px 27px;
+  }
 }
